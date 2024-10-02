@@ -170,23 +170,23 @@ Go on the folder
 cd zero
 ```
 
-**We gonna setup ```discipline.lua``` / ```hsl.lua``` / ```lsp.lua``` files**
+### We gonna finals setup ```discipline.lua``` / ```hsl.lua``` / ```lsp.lua``` files
 
-Create discipline file
+**Create discipline file**
 
 ```bash
 vim discipline.lua
 ```
 [discipline.lua](https://github.com/marhiru/vim-setup/blob/main/zero/discipline.lua)
 
-Create hsl theme file
+**Create hsl theme file**
 
 ```bash
 vim discipline.lua
 ```
 [hsl.lua](https://github.com/marhiru/vim-setup/blob/main/zero/hsl.lua)
 
-Create lsp file
+**Create lsp file**
 
 ```bash
 vim discipline.lua
@@ -195,10 +195,10 @@ vim discipline.lua
 
 
 
-# After completing all theses steps, your are safe to type on your terminal
+## After completing all theses steps, your are safe to type on your terminal
 
 ```bash
 vim
 ```
 
-# And your lazyvim will auto-configure with your config files, bye!!
+### And your lazyvim will auto-configure based on config files, thats all! Keep safe
