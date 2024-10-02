@@ -1,4 +1,4 @@
-# Welcome to my Linux terminal setup and config
+# Welcome to my Lazyvim setup and configuration
 
 ## First of all we need to install HomeBrew for linux (LinuxBrew)
 
