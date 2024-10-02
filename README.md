@@ -38,13 +38,13 @@ brew install neovim
 
 ## Ok, before installing LazyVim, we need to setup our cli superpowers (oh-my-fish) Fish Shell + oh-my-zsh
 
-First we need to install Fish Shell
+First, we install Fish Shell
 
 ```bash
 brew install fish
 ```
 
-Second is install the oh-my-fish with curl method like on official repository
+Second, we need to install the oh-my-fish with curl method like on official repository
 
 ```bash
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
