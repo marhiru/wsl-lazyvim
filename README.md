@@ -1,14 +1,14 @@
 # Welcome to my Linux terminal setup and config
 
-## First we need to install HomeBrew for linux 
+## First of all we need to install HomeBrew for linux (LinuxBrew)
 
-### Linux Brew setup
+Linux Brew **SETUP**
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Now add Linux Brew to terminal PATH
+Adding LinuxBrew to terminal **PATH**
 
 ```bash
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
@@ -16,27 +16,23 @@ test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/bre
 echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 ```
 
-### To finish Linux Brew SETUP install this required dependencies
+Required dependencies To finish LinuxBrew **SETUP** 
 
 ```bash
-sudo apt-get install build-essentials && sudo apt update
+sudo apt-get install build-essentials && brew install gcc
+```
+**Update to check if everything is ok**
+```bash
+sudo apt update
 ```
 
-### First dependency install on Linux Brew
+Testing if LinuxBrew are installed
 
 ```bash
-brew install gcc
+brew  --version
 ```
 
-## Now we go to start our neo/lazy vim setup
-
-### Install neovim
-
-```bash
-brew install neovim
-```
-
-## Ok, before installing LazyVim, we need to setup our cli superpowers (oh-my-fish) Fish Shell + oh-my-zsh
+## Setup terminal plugin (oh-my-fish) Fish Shell + oh-my-zsh
 
 First, we install Fish Shell
 
@@ -50,7 +46,7 @@ Second, we need to install the oh-my-fish with curl method like on official repo
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
 
-## And to finish oh-my-fish setup we need to set this shell on default settings
+And to finish oh-my-fish setup we need to set this shell on default settings
 
 First you need to reach bashrc file
 ```bash
@@ -63,34 +59,146 @@ Add this to final line in bashrc
 fish
 ```
 
-## Finally we now can start to setup our WorkFlow Structure using LazyVim
+# Lets setup lazyvim 
 
-### First we need to setup our Lazy vim imports file structure
+Install neovim (If already installed, skip this step)
 
-Adding nvim to ~/.config/ files
+```bash
+brew install neovim
+```
 
+### Creating nvim folder in **PATH**  ```~/.config```
+
+```bash
+ cd ~/.config && mkdir nvim
+```
+or
 ```bash
 mkdir ~/.config/nvim
 ```
 
-Creating init.lua inside nvim folder (use this cli inside ~/.config/nvim folder)
+_________________________________________________________
+
+### Creating lua folder in **PATH**  ```~/.config/nvim```
 
 ```bash
-vim init.lua
+cd nvim && mkdir lua
+```
+or
+```bash
+mkdir ~/.config/nvim/lua
 ```
 
-Create a whole file structure (assuming your inside of ~/.config/nvim)
+______________________________________________________________
 
-PATH ~/.config/nvim/lua
+### Creating config folder in **PATH** ```~/.config/nvim/lua```
 
 ```bash
-mkdir lua
+cd lua && mkdir config
+```
+or
+```bash
+mkdir ~/.config/nvim/lua/config
 ```
 
-PATH ~/.config/nvim/lua/config
+
+## Initializing Lazyvim
+
+**Create init file**
 
 ```bash
-mkdir lua/config
+cd ~/.config/nvim && vim init.lua
 ```
 
-## Now your terminal and Lazyvim are ready!
+[init.lua content](https://github.com/marhiru/vim-setup/blob/main/init.lua)
+
+## Configure Lazyvim
+### Now we ahead to setup your own config, have mine for example but dont bindly copy & paste, use as inpiration and have your own
+
+**Creating keymaps presets file**
+
+```bash
+cd ~/.config/nvim/lua/config && vim keymaps.lua
+```
+
+[keymaps.lua content](https://github.com/marhiru/vim-setup/blob/main/keymaps.lua)
+
+_________________________________________________________________________________
+
+**Creating autocmds presets file**
+
+```bash
+cd ~/.config/nvim/lua/config && vim autocmds.lua
+```
+
+[autocmds.lua content](https://github.com/marhiru/vim-setup/blob/main/autocmds.lua)
+
+___________________________________________________________________________________
+
+**Creating lazyvim setup file**
+
+```bash
+cd ~/.config/nvim/lua/config && vim lazy.lua
+```
+
+[lazy.lua content](https://github.com/marhiru/vim-setup/blob/main/lazy.lua)
+
+___________________________________________________________________________
+
+**Creating opts (options) config file**
+
+```bash
+cd ~/.config/nvim/lua/config && vim options.lua
+```
+
+[options.lua content](https://github.com/marhiru/vim-setup/blob/main/options.lua)
+
+________________________________________________________________________________
+
+### Now create a folder with whatever name you want on PATH ```~/.config/nvim/lua```
+**This folder will contain discipline.lua and theme config files**
+
+I will create the folder with the same of my user **zero**
+
+```bash
+  mkdir zero
+```
+
+Go on the folder
+
+```bash
+cd zero
+```
+
+**We gonna setup ```discipline.lua``` / ```hsl.lua``` / ```lsp.lua``` files**
+
+Create discipline file
+
+```bash
+vim discipline.lua
+```
+[discipline.lua](https://github.com/marhiru/vim-setup/blob/main/zero/discipline.lua)
+
+Create hsl theme file
+
+```bash
+vim discipline.lua
+```
+[hsl.lua](https://github.com/marhiru/vim-setup/blob/main/zero/hsl.lua)
+
+Create lsp file
+
+```bash
+vim discipline.lua
+```
+[lsp.lua](https://github.com/marhiru/vim-setup/blob/main/zero/lsp.lua)
+
+
+
+# After completing all theses steps, your are safe to type on your terminal
+
+```bash
+vim
+```
+
+# And your lazyvim will auto-configure with your config files, bye!!
